@@ -1,0 +1,265 @@
+@charset "utf-8";
+body {
+  font-family: "游ゴシック体", "Yu Gothic", "YuGothic", "sans-serif", "Meiryo";
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  height: 100%;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff9cc;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 850px;
+  border-bottom: 1px solid grey;
+  padding-top: 10px;
+}
+
+.title {
+  color: grey;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  border-top: 1px solid grey;
+}
+
+.p {
+  line-height: 1.5;
+}
+/*--話数--*/
+.number {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+a {
+  color: #181818;
+  text-decoration: none;
+}
+
+a.btn-border {
+  width: 850px;
+  height: 35px;
+  border: 2px solid rgb(255, 123, 0);
+  border-radius: 0;
+  background: rgb(240, 241, 148);
+}
+
+a.btn-border:hover {
+  color: #fff;
+  background: rgb(255, 123, 0);
+}
+/*--/話数--*/
+
+/*--続きを読む--*/
+.cp_box *,
+.cp_box *:before,
+.cp_box *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cp_box {
+  position: relative;
+}
+.cp_box label {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 140px; /* グラデーションの高さ */
+  cursor: pointer;
+  text-align: center;
+  /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 252, 252, 0) 0%,
+    rgba(250, 252, 252, 0.95) 90%
+  );
+}
+.cp_box input:checked + label {
+  background: inherit; /* 開いた時にグラデーションを消す */
+}
+.cp_box label:after {
+  line-height: 2.5rem;
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 50%;
+  width: 16rem;
+  font-family: FontAwesome;
+  content: "\025bc"" もっと読む";
+  transform: translate(-50%, 0);
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: rgba(27, 37, 56, 1);
+}
+.cp_box input {
+  display: none;
+}
+.cp_box .cp_container {
+  overflow: hidden;
+  height: 300px; /* 開く前に見えている部分の高さ */
+  transition: all 0.5s;
+}
+.cp_box input:checked + label {
+  /* display: none ; 閉じるボタンを消す場合解放 */
+}
+.cp_box input:checked + label:after {
+  font-family: FontAwesome;
+  content: "\025b2"" 閉じる";
+}
+.cp_box input:checked ~ .cp_container {
+  height: auto;
+  padding-bottom: 120px; /* 閉じるボタンのbottomからの位置 */
+  transition: all 0.5s;
+}
+/*--/続きを読む--*/
+
+/*--LINE--*/
+.recommend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.recommend-item :hover {
+  filter: opacity(60%);
+  filter: drop-shadow(3px 3px 0px rgba(29, 82, 42, 0.4));
+}
+/*--/LINE--*/
+
+/*--YouTube--*/
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-item {
+  padding-bottom: 20px;
+}
+/*--/YouTube--*/
+
+/*--footer--*/
+
+footer {
+  background: rgb(255, 123, 0);
+}
+
+.bottom {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bottom-top {
+  font-weight: 700;
+}
+
+.bottom-top :visited {
+  color: #fff;
+}
+
+.bottom-come {
+  margin-bottom: 30px;
+}
+/*--/footer--*/
+
+/*--content--*/
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*--/content--*/
+
+@media screen and (max-width: 520px) {
+  .img {
+    max-width: 100%;
+  }
+
+  body {
+    display: flex;
+    font-size: 32px;
+    flex-wrap: wrap;
+    width: 800px;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    background-color: #fff9cc;
+  }
+
+  .story {
+    width: 750px;
+  }
+
+  a.btn-border {
+    width: 750px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+}
+
+/*--タブレット版--*/
+@media screen and (min-width: 521px) and (max-width: 1024px) {
+  body {
+    display: flex;
+    font-size: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: #fff9cc;
+  }
+
+  .story {
+    width: 700px;
+  }
+
+  a.btn-border {
+    width: 700px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+}
